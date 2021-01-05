@@ -30,7 +30,7 @@ class CustomerForm(DialogModelForm):
         initial.update(dict((f, getattr(instance, f)) for f in self.Meta.custom_fields))
         super().__init__(initial=initial, instance=instance, *args, **kwargs)
 
-    @property
+    @property #this is constructor
     def media(self):
         return Media(css={'all': [sass_processor('shop/css/customer.scss')]})
 
